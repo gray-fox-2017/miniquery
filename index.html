@@ -64,6 +64,7 @@
       EventDispatcher.on('.klass', 'click', function() {
         console.log("Awesome")
       })
+      EventDispatcher.trigger('.klass', 'click')
     }
 
     function demoAjax() {
@@ -85,6 +86,16 @@
       setTimeout(function() {
         miniquery("#eyed").show()
       }, 2000)
+      miniquery.ajax({
+        url: 'http://localhost:3000/',
+        type: 'GET',
+        success: function(data) {
+          console.log("Success: ", data)
+        },
+        fail: function() {
+          console.log("ERROR")
+        }
+      })
     }
 
     function demoAlias() {
