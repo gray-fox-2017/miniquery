@@ -15,6 +15,7 @@
         color: gray;
       }
     </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="lib/miniquery.js"></script>
   </head>
 
@@ -56,14 +57,15 @@
     function demoDOM() {
       DOM.hide('.klass')
       DOM.show('.klass')
-      DOM.removeClass('.klass', 'shaded')
       DOM.addClass('.klass', 'shaded')
+      DOM.removeClass('.klass', 'shaded')
     }
 
     function demoEventDispatcher() {
       EventDispatcher.on('.klass', 'click', function() {
         console.log("Awesome")
-      })
+      }),
+      EventDispatcher.trigger('.klass', 'click')
     }
 
     function demoAjax() {
