@@ -68,7 +68,8 @@
 
     function demoAjax() {
       AjaxWrapper.request({
-        url: 'http://localhost:3000/',
+        // url: 'http://localhost:3000/',
+        url: 'http://swapi.co/api/people/',
         type: 'GET',
         success: function(data) {
           console.log("Success: ", data)
